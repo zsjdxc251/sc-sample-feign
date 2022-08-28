@@ -33,9 +33,11 @@ import org.springframework.cloud.openfeign.loadbalancer.RetryableFeignBlockingLo
  *
  *   7. loadbalancer 从 {@link  ServiceInstanceListSupplier} 获取到实例 或者可以使用本地无注册中心可以使用该类实现
  *
- *   8. 全局配置超时时间 是否可以
+ *   8. 全局配置超时时间 是否可以   通过feign 配置 全局超时时间 不能像之前一样使用ribbon
  *
  *   9. 通用feign fallback
+ *
+ *   10. 关于接入熔断器问题
  *
  *   {@link  BlockingLoadBalancedRetryPolicy}
  *   {@link  RetryableFeignBlockingLoadBalancerClient} 和它相差无几 {@link  RetryLoadBalancerInterceptor}

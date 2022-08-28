@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author zhengshijun
  * @date 2022/8/27.
  */
-@FeignClient(name = "sc-sample-feign",path = "/sample" )
+@FeignClient(name = "sc-sample-feign",path = "/sample",fallbackFactory = SampleFallbackFactory.class)
 public interface DemoClient {
 
     @PostMapping("/e1")

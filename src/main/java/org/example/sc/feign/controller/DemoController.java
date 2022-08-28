@@ -27,7 +27,7 @@ public class DemoController {
         Options options = new Options(500, TimeUnit.MILLISECONDS,3,TimeUnit.SECONDS,true);
 
         log.info("demo-e1");
-        return demoClient.e1(options);
+        return demoClient.e1(null);
     }
 
     @GetMapping("/e2")
@@ -35,6 +35,6 @@ public class DemoController {
         Options options = new Options(500, TimeUnit.MILLISECONDS,3,TimeUnit.SECONDS,true);
 
         log.info("demo-e2");
-        return demoClient.e2(options);
+        return demoClient.e2(null);
     }
 }
