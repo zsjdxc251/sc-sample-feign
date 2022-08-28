@@ -2,7 +2,7 @@
 spring:
   sleuth:
     feign:
-      enabled: false
+      enabled: true
   application:
     name: sc-sample-feign
   cloud:
@@ -52,6 +52,9 @@ spring:
 #          - data-id: actuator.yml
 
 feign:
+  ## 使用sentinel 但是不是通过 spring cloud commons 方式启用
+  sentinel:
+    enabled: true
   hystrix:
     enabled: false
   circuitbreaker:
