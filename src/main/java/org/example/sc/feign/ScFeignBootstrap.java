@@ -14,7 +14,10 @@ import org.springframework.cloud.openfeign.loadbalancer.RetryableFeignBlockingLo
  *
  *    spring cloud commons 抽象 https://docs.spring.io/spring-cloud-commons/docs/3.1.3/reference/html/#spring-cloud-commons-common-abstractions
  *
- *   loadbalnacer 重试配置可参考配置 https://www.cnblogs.com/xfeiyun/p/16219937.html，https://blog.csdn.net/weixin_42189048/article/details/117781378
+ *   loadbalnacer 重试配置可参考配置
+ *                  https://www.cnblogs.com/xfeiyun/p/16219937.html
+ *                  https://blog.csdn.net/weixin_42189048/article/details/117781378
+ *                  https://blog.csdn.net/qq_39363204/article/details/124357014
  *   问题
  *   1. 通过该应用ribbon 尝试 POST socket closed 是否会重试
  *   2. loadbalancer 查看并知道 socket closed 原理不会重试原因
