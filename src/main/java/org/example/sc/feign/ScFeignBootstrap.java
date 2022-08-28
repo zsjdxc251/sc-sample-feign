@@ -4,11 +4,16 @@ package org.example.sc.feign;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.loadbalancer.blocking.retry.BlockingLoadBalancedRetryPolicy;
+import org.springframework.cloud.loadbalancer.core.ServiceInstanceListSupplier;
 import org.springframework.cloud.openfeign.loadbalancer.FeignBlockingLoadBalancerClient;
 import org.springframework.cloud.openfeign.loadbalancer.RetryableFeignBlockingLoadBalancerClient;
 
 /**
  *
+ *
+ *    spring cloud commons 抽象 https://docs.spring.io/spring-cloud-commons/docs/3.1.3/reference/html/#spring-cloud-commons-common-abstractions
+ *
+ *   loadbalnacer 重试配置可参考配置 https://www.cnblogs.com/xfeiyun/p/16219937.html，https://blog.csdn.net/weixin_42189048/article/details/117781378
  *   问题
  *   1. 通过该应用ribbon 尝试 POST socket closed 是否会重试
  *   2. loadbalancer 查看并知道 socket closed 原理不会重试原因
@@ -19,6 +24,10 @@ import org.springframework.cloud.openfeign.loadbalancer.RetryableFeignBlockingLo
  *   5. loadbalancer 和 feign 重试方式策略是否冲突 是否是并行存在的
  *      feign 重试 {@link  SynchronousMethodHandler#invoke(java.lang.Object[])}
  *      结论：冲突 ， feign 是顶层重试，不会有下一个实例重试，而 loadbalancer则更准确可以通过 实例和下一个实例重试
+ *
+ *   6. 关于spring cloud 切换到 loadbalancer 看查看博客 https://blog.csdn.net/Amy126/article/details/108636810
+ *
+ *   7. loadbalancer 从 {@link  ServiceInstanceListSupplier} 获取到实例 或者可以使用本地无注册中心可以使用该类实现
  *
  *   {@link  BlockingLoadBalancedRetryPolicy}
  *   {@link  RetryableFeignBlockingLoadBalancerClient}
