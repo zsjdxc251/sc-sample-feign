@@ -3,6 +3,7 @@ package org.example.sc.feign;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.loadbalancer.RetryLoadBalancerInterceptor;
 import org.springframework.cloud.loadbalancer.blocking.retry.BlockingLoadBalancedRetryPolicy;
 import org.springframework.cloud.loadbalancer.core.ServiceInstanceListSupplier;
 import org.springframework.cloud.openfeign.loadbalancer.FeignBlockingLoadBalancerClient;
@@ -30,7 +31,7 @@ import org.springframework.cloud.openfeign.loadbalancer.RetryableFeignBlockingLo
  *   7. loadbalancer 从 {@link  ServiceInstanceListSupplier} 获取到实例 或者可以使用本地无注册中心可以使用该类实现
  *
  *   {@link  BlockingLoadBalancedRetryPolicy}
- *   {@link  RetryableFeignBlockingLoadBalancerClient}
+ *   {@link  RetryableFeignBlockingLoadBalancerClient} 和它相差无几 {@link  RetryLoadBalancerInterceptor}
  * @author zhengshijun
  * @date 2022/8/27.
  */
