@@ -37,7 +37,7 @@ import org.springframework.cloud.openfeign.loadbalancer.RetryableFeignBlockingLo
  *
  *   9. 通用feign fallback
  *
- *   10. 关于接入熔断器问题 与 trace 不兼容问题
+ *   10. 关于接入熔断器问题 与 trace 不兼容问题  (新版本可以兼容)
  *
  *   {@link  BlockingLoadBalancedRetryPolicy}
  *   {@link  RetryableFeignBlockingLoadBalancerClient} 和它相差无几 {@link  RetryLoadBalancerInterceptor}

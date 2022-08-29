@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  */
 @Slf4j
 @Component
-public class SampleFallbackFactory implements feign.hystrix.FallbackFactory <Object> {
+public class SampleFallbackFactory implements FallbackFactory  <Object> {
     @Override
     public Object create(Throwable throwable) {
         log.error(throwable.getMessage(),throwable);
@@ -24,7 +24,7 @@ public class SampleFallbackFactory implements feign.hystrix.FallbackFactory <Obj
                 public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
 
-                    return ResponseEntity.status(500);
+                    return ResponseEntity.status(500).build();
                 }
             });
 

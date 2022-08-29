@@ -1,0 +1,45 @@
+
+spring:
+  application:
+    name: sc-sample-feign
+  cloud:
+    discovery:
+      client:
+        simple:
+          instances:
+            sc-sample-feign:
+              - instanceId: sc-sample-feign-01
+                serviceId: sc-sample-feign
+                host: localhost
+                port: 8081
+                secure: false
+              - instanceId: sc-sample-feign-02
+                serviceId: sc-sample-feign
+                host: localhost
+                port: 8082
+                secure: false
+
+    loadbalancer:
+      retry:
+        enabled: true
+        ## 服务重试次数 除去本身调用一次
+        maxRetriesOnSameServiceInstance: 1
+        retryOnAllOperations: false
+        ## 重试多少个服务
+        maxRetriesOnNextServiceInstance: 2
+
+      ribbon:
+        enabled: false
+
+
+feign:
+  circuitbreaker:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 500
+        readTimeout: 3000
+  okhttp:
+    enabled: true
+
