@@ -45,6 +45,7 @@ import org.springframework.cloud.openfeign.loadbalancer.RetryableFeignBlockingLo
  *   12. gateway 替换 loadbalancer
  *   13. {@link  LoadBalanced} {@link  LoadBalancerClient} {@link  org.springframework.cloud.loadbalancer.annotation.LoadBalancerClient}
  *      的作用怎么什么场景下使用
+ *   14. 通过 feign 通过 url 替换 在拦截器为什么是可以实现的
  *   {@link  BlockingLoadBalancedRetryPolicy}
  *   {@link  RetryableFeignBlockingLoadBalancerClient} 和它相差无几 {@link  RetryLoadBalancerInterceptor}
  * @author zhengshijun
