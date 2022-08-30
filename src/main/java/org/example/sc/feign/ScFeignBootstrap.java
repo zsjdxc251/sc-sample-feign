@@ -3,6 +3,8 @@ package org.example.sc.feign;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.cloud.client.loadbalancer.RetryLoadBalancerInterceptor;
 import org.springframework.cloud.loadbalancer.blocking.retry.BlockingLoadBalancedRetryPolicy;
 import org.springframework.cloud.loadbalancer.core.ServiceInstanceListSupplier;
@@ -41,7 +43,8 @@ import org.springframework.cloud.openfeign.loadbalancer.RetryableFeignBlockingLo
  *   10. 关于接入熔断器问题 与 trace 不兼容问题
  *   11. ribbon 原始实现
  *   12. gateway 替换 loadbalancer
- *
+ *   13. {@link  LoadBalanced} {@link  LoadBalancerClient} {@link  org.springframework.cloud.loadbalancer.annotation.LoadBalancerClient}
+ *      的作用怎么什么场景下使用
  *   {@link  BlockingLoadBalancedRetryPolicy}
  *   {@link  RetryableFeignBlockingLoadBalancerClient} 和它相差无几 {@link  RetryLoadBalancerInterceptor}
  * @author zhengshijun
