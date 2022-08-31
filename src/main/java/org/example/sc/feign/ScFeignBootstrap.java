@@ -42,7 +42,7 @@ import org.springframework.cloud.openfeign.loadbalancer.RetryableFeignBlockingLo
  *
  *   10. 关于接入熔断器问题 与 trace 不兼容问题
  *   11. ribbon 原始实现
- *   12. gateway 替换 loadbalancer
+ *   12. gateway 替换 loadbalancer x
  *   13. {@link  LoadBalanced} {@link  LoadBalancerClient} {@link  org.springframework.cloud.loadbalancer.annotation.LoadBalancerClient}
  *      的作用怎么什么场景下使用
  *   14. 通过 feign 通过 url 替换 在拦截器为什么是可以实现的
