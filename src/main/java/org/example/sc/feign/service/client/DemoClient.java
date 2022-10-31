@@ -1,7 +1,9 @@
 package org.example.sc.feign.service.client;
 
 import feign.Request.Options;
+import org.example.sc.feign.model.User;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,4 +24,9 @@ public interface DemoClient {
 
     @PostMapping("/invoker02")
     ResponseEntity<String> invoker02(@RequestParam("age")Integer age, Options options);
+
+    @GetMapping("/invoker03")
+    ResponseEntity<String> invoker03(@SpringQueryMap User user);
+
+
 }
